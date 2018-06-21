@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -118,5 +119,9 @@ public class PositiveTestScenarios {
 		Boolean check =(customerName +" "+ customerLastname).equals(name);
 		Assert.assertTrue(check, name);
 		
+	}
+	@AfterClass
+	public void done() {
+		positive.quit();
 	}
 }
